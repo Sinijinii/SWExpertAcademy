@@ -5,7 +5,7 @@ for tc in range(T):
     # 충전기의 위치 값
     charger = list(map(int,input().split()))
     # 0인 값들 중 충전기의 위치에만 1로 표시
-    arr = [0]*(N+1)
+    arr = [0] * (N+1)
     for cg_idx in charger:
         arr[cg_idx] = 1
     #나의 위치 idx, 충전의 횟수 count 변수
