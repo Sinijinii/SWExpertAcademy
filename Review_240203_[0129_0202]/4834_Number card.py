@@ -16,7 +16,7 @@ for tc in range(T):
             if arr[i] == arr[j]:
                 count += 1
         count_list.append(count)
-    # 가장 많은 수를 가진 인덱스값 추출
+    # 가장 많은 수를 가진 인덱스값 추출 *filter사용시 모든 인덱스 값을 가져올 수 있음
     max_idx = list(filter(lambda x : count_list[x] == max(count_list), range(N)))
     result = 0
     result_idx = 0
