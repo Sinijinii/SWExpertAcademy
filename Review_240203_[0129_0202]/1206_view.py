@@ -1,4 +1,4 @@
-T = 10
+T = int(input()) # 10개
 for tc in range(T):
     N = int(input())
     arr = list(map(int,input().split()))
