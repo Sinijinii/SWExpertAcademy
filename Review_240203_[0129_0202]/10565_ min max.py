@@ -14,5 +14,5 @@ for tc in range(T):
         if data > max_value:
             max_value = data
         if data < min_value:
-            min_value  = data
+            min_value = data
     print(f'#{tc+1} {max_value-min_value}')
