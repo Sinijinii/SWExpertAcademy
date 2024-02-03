@@ -12,8 +12,7 @@
 #
 #     print(f'#{tc+1} {maximum-minimum}')
 
- #list(filter(lambda x: data[x] == min_data, range(len(data))))를 사용해도 괜찮음
-
+ #list(filter(lambda x: data[x] == min_data, range(len(data))))를 사용
 T = int(input())
 for tc in range(T):
     N = int(input())
