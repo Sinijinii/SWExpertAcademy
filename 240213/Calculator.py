@@ -21,6 +21,9 @@ for tk in fx:
         while isp[stack[top]] >= icp[tk]:
             top -= 1
             postfix += stack[top+1]
+        # push
+        top += 1
+        stack[top] = tk
     # 닫는 괄호이면, 여는 괄호를 만날때까지 pop
     elif tk == ')':
         while stack[top] != '(':
