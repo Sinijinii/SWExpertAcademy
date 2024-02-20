@@ -1,18 +1,15 @@
 def calculator(lst):
     stack = []  # 피연산자 바로 추가할 리스트 생성
     if_stack = []
-    print(lst)
+    #print(lst)
     for l in range(len(lst)):
         if str(lst[l]).isdigit():
             stack.append(lst[l])
-            print(stack)
         if len(stack) >= 2:
             if lst[l] == '+':
                 a1 = stack.pop()
                 a2 = stack.pop()
                 stack.append(a1 + a2)
-
-
             elif lst[l] == '-':
                 a1 = stack.pop()
                 a2 = stack.pop()
@@ -35,25 +32,28 @@ def calculator(lst):
 def Postfix(n, fx):
     postfix = []
     stack = []
+    str =""
     for tk in fx:
         if tk.isdigit():
             postfix.append(int(tk))
+            str += tk
         else:
             if stack:
                 if isp[stack[-1]] < isp[tk]:
                     stack.append(tk)
-
                 else:
-                    if isp[stack[-1]] > isp[tk]:
-                        postfix += stack.pop()
-                        postfix.append(tk)
-                    elif isp[stack[-1]] == isp[tk]:
-                        postfix.append(tk)
+                    while stack and isp[stack[-1]] >= isp[tk]:
+                        a = stack.pop()
+                        postfix.append(a)
+                        str += a
+                    stack.append(tk)
             else:
                 stack.append(tk)
-            #print(stack)
+
     while len(stack) > 0:
-        postfix.append(stack.pop())
+        a = stack.pop()
+        postfix.append(a)
+        str += a
 
     return postfix
 
