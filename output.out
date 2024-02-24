@@ -1,6 +1,3 @@
-#1 1234
-Traceback (most recent call last):
-#2 4123
-  File "C:\Users\oops5\PycharmProjects\SWExpertAcademy\Review_list~Tree\1234_password.py", line 3, in <module>
-    N,pw = input().split()
-EOFError: EOF when reading a line
+#1 1
+#2 1
+#3 0
