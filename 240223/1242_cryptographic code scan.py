@@ -24,11 +24,17 @@ for tc in range(T):
                 cnt_str.append(y-idx)
                 idx = y
         cnt.append(cnt_str)
+    print(cnt)
+
+
+
 
     cnt_f = cnt[0]
     num = 1
     result1 = []
+
     for cnt_num in range(1,len(cnt)):
+
         if cnt_f == cnt[cnt_num]:
             num += 1
             cnt_f = cnt[cnt_num]
@@ -37,15 +43,18 @@ for tc in range(T):
             cnt_f = cnt[cnt_num]
         if num >= 5:
             if len(result1) == 0 or(len(result1) > 0 and result1[-1] != cnt[cnt_num]):
+
                 result1.append(cnt[cnt_num])
 
+    result1 = list(filter(None, result1))
+    print(result1)
     result = []
-    idx = 0
-    for _ in range(int(len(result1[0])/32)):
-        result.append(result1[0][idx:idx+32])
+    for i in range(len(result1)):
+        idx = 0
+        for _ in range(int(len(result1[i])/32)):
+            result.append(result1[i][idx:idx+32])
         idx += 32
-
-    print(result)
+    result = list(set(map(tuple,result)))
     fin_result = 0
     for r in range(len(result)):
         idx_re = 0
@@ -58,6 +67,7 @@ for tc in range(T):
             else:
                 number += str(code.index(list(map(lambda x: int(x/min(arr_f)), arr_f))))
             idx_re += 4
+
         even = 0
         odd = 0
         for i in range(8):
