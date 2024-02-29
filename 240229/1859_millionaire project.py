@@ -23,4 +23,4 @@ for tc in range(T):
     count = 0
     max_mon(arr)
     print(f"#{tc+1}",count)
-    #print(f"#{tc+1}",max_mon(arr))
+    # print(f"#{tc+1}",max_mon(arr))
