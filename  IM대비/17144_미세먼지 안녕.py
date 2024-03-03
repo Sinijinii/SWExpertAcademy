@@ -6,27 +6,22 @@ dj = [1,0,-1,0]
 air_t = 0
 air_u = 0
 
+from copy import deepcopy
 for num in range(T):
-    arr_0 = [[0 for _ in range(C)] for __ in range(R)]
+    arr_0 = deepcopy(arr)
     for i in range(R):
         for j in range(C):
             cnt = 0
             for idx in range(4):
-                if 0<=i + di[idx]< R and 0<= j + dj[idx] <C and arr[i][j] != -1:
+                if 0<=i + di[idx]< R and 0<= j + dj[idx] <C and arr[i][j] > 4:
                     if arr[i + di[idx]][j + dj[idx]] != -1:
                         arr_0[i+ di[idx]][j + dj[idx]] += arr[i][j] // 5
-                        cnt += arr[i][j] // 5
+                        arr_0[i][j] -= arr[i][j] // 5
             if arr[i][j] == -1 and air_t != 0:
                 air_u = i
             elif arr[i][j] == -1 and air_t == 0:
                 air_t = i
-
-            arr_0[i][j] -= cnt
-    for i_ in range(R):
-        for j_ in range(C):
-            arr[i_][j_] += arr_0[i_][j_]
-
-
+    arr = deepcopy(arr_0)
     for c1 in range(air_t):
         if arr[air_t - c1][0] == -1:
             pass
