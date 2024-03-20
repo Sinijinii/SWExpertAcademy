@@ -1,10 +1,10 @@
+# bfs사용
 from collections import deque
 
 def bfs(N):
     Q = deque()
     Q.append((N,1))
     vis[N] = 1
-
     while Q:
         n,cnt = Q.popleft()
 
@@ -15,7 +15,6 @@ def bfs(N):
             if 1 <= i <= 1000000 and vis[i] == 0:
                 Q.append((i,cnt+1))
                 vis[i] = 1
-
 
 T = int(input())
 for tc in range(T):

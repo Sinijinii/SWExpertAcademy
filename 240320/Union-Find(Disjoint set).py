@@ -1,5 +1,4 @@
 # 1~6까지 노드가 존재
-
 # 1. make-set
 def make_set(n):
     return [i for i in range(n)]

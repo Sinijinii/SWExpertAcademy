@@ -30,6 +30,7 @@ for tc in range(T):
         l, r = t[i * 2], t[i * 2 + 1]
         union(l,r)
 
+    # 필수
     # 1~N까지 각각 대표를 찾아줌
     for i in range(1, N + 1):
         groups[i - 1] = find_set(i)
