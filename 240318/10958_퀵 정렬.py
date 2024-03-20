@@ -12,7 +12,6 @@ def quick_sort(arr):
             equal_arr.append(num)
     return quick_sort(lesser_arr) + equal_arr + quick_sort(greater_arr)
 
-
 T = int(input())
 for tc in range(T):
     N = int(input())
